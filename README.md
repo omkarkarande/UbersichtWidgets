@@ -2,7 +2,7 @@
 
 Custom widgets for [Übersicht](https://tracesof.net/uebersicht/)
 
-## Isntallation
+## Installation
 
 1. Clone this repo to a local directory
 2. `cd` into this directoy and run `npm install`

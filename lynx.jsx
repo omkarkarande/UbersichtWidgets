@@ -6,7 +6,7 @@ var converter = require("number-to-words")
 
 // Emotion styles
 const container = css`
-    padding: 80px 0 0 22px;
+    padding: 14vh 0 0 20px;
 `;
 
 const flexContainer = css`

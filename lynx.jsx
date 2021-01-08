@@ -56,7 +56,8 @@ const infoBox = css`
 const weekday = css`
     padding-bottom: 4px;
     font-size: 20px;
-    font-family: "Roboto Bold";
+    font-family: "Roboto";
+    font-weight: bold;
     text-transform: uppercase;
 `;
 

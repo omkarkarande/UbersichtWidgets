@@ -14,5 +14,9 @@
   "homepage": "https://github.com/omkarkarande/UbersichtWidgets#readme",
   "dependencies": {
     "number-to-words": "^1.2.4"
+  },
+  "devDependencies": {
+    "eslint": "^7.17.0",
+    "eslint-plugin-react": "^7.22.0"
   }
 }

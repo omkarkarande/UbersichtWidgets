@@ -1,11 +1,15 @@
 /* eslint-disable react/react-in-jsx-scope */
 
 // Imports 
-import { css } from 'uebersicht';
+import { css, React } from 'uebersicht';
 import { fetchCurrentDate, fetchCurrentTime } from './src/datetimeutils';
+import { fetchCurrentWeather } from './src/weatherutils';
 
 // 3P requires
 var numberConverter = require("number-to-words");
+
+// User Config
+var userConfig = require("./user_config.json");
 
 // Emotion styles
 const container = css`
@@ -47,7 +51,7 @@ const period = css`
 `;
 
 const infoBox = css`
-    margin: 10px 0 0 4px;
+    margin: 16px 0 24px 4px;
     padding-left: 10px;
     font-family: "Roboto";
     border-left: 4px solid #191919;
@@ -61,8 +65,8 @@ const weekday = css`
     text-transform: uppercase;
 `;
 
-const weather = css`
-    width: 500px;
+const weatherBox = css`
+    width: 400px;
     overflow-wrap: normal;
 `;
 
@@ -74,31 +78,46 @@ export const command = () => {
     return {
         "time": fetchCurrentTime(),
         "date": fetchCurrentDate(),
+        "weather": fetchCurrentWeather(userConfig["location"], userConfig["OPENWEATHERMAP_API_KEY"])
     };
 };
 
 // Main render function to draw up the widget.
 export const render = ({output, error}) => {
+
+    const {time, date, weather} = output;
+
     return (
         <div className={container}>
             
             <div className={flexContainer}>
                 <div className={hours}>
-                    {numberConverter.toWords(output["time"]["hours"])}
+                    {numberConverter.toWords(time["hours"])}
                 </div>
                 <div className={periodContainer}>
-                    <div className={period}>{output["time"]["period"]}</div>
+                    <div className={period}>{time["period"]}</div>
                 </div>
             </div>
             
             <div className={minutes}>
-                {numberConverter.toWords(output["time"]["minutes"]).replace("-", " ")}
+                {numberConverter.toWords(time["minutes"]).replace("-", " ")}
             </div>
 
             <div className={infoBox}>
-                <div className={weekday}>{output["date"]["weekday"]}</div>
-                <div>{output["date"]["dateString"]}</div>
+                <div className={weekday}>{date["weekday"]}</div>
+                <div>{date["dateString"]}</div>
             </div>
+    
+            { weather === undefined ? 
+                (<div className={infoBox}>Fetching weather...</div>) : 
+                (<div className={infoBox}>
+                    <div className={weatherBox}>
+                        Weather in {weather["location"]} is {weather["condition"]}
+                        <br></br><br></br>
+                        Current temprature is around {weather["temprature"]}°C, wind speed is {weather["windSpeed"]}km/h, and humidity about {weather["humidity"]}%
+                    </div>
+                </div>)
+            }
         </div>
     );
 };

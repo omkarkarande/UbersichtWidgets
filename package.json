@@ -13,6 +13,7 @@
   },
   "homepage": "https://github.com/omkarkarande/UbersichtWidgets#readme",
   "dependencies": {
+    "js-cache": "^1.0.3",
     "number-to-words": "^1.2.4"
   },
   "devDependencies": {

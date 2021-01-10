@@ -112,7 +112,7 @@ export const render = ({output, error}) => {
                 (<div className={infoBox}>Fetching weather...</div>) : 
                 (<div className={infoBox}>
                     <div className={weatherBox}>
-                        Weather in {weather["location"]} is {weather["condition"]}
+                        Weather in {weather["location"]} is {weather["condition"]}.
                         <br></br><br></br>
                         Current temprature is around {weather["temprature"]}°C, wind speed is {weather["windSpeed"]}km/h, and humidity about {weather["humidity"]}%
                     </div>

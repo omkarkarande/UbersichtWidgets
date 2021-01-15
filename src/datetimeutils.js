@@ -20,15 +20,29 @@ const fetchCurrentDate = () => {
     const now =  new Date().toLocaleString('en-GB', {
       day: "2-digit",
       weekday: "long",
-      month: "long",
+      month: "short",
       year: "numeric",
     }).split(",").map((item) => item.trim());
-  
+
+    const [day, month, year] = now[1].split(" ");
+    console.log(day);
     // Parse string into separate entities
     return {
         "weekday": now[0],
-        "dateString": now[1]
+        "day": day,
+        "month": month,
+        "year": year
     };
-  };
+};
 
-export { fetchCurrentTime, fetchCurrentDate };
+/**
+ * Gets an appropriate greeting for the given hour.
+ * @param {number} hours 
+ */
+const fetchGreeting = (hours) => {
+    if (hours < 12) return "morning";
+    if (hours < 18) return "afternoon";
+    return "evening";
+};
+
+export { fetchCurrentTime, fetchCurrentDate, fetchGreeting };

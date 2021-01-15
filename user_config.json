@@ -1,4 +1,5 @@
 {
+    "user": "Omi",
     "location": "Seattle,US",
-    "OPENWEATHERMAP_API_KEY": "YOUR_API_KEY_HERE"
+    "openweathermapApiKey": "d147cfeb176bbf760738b9dff276e4f5"
 }

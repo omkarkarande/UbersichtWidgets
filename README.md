@@ -15,5 +15,9 @@ Custom widgets for [Übersicht](https://tracesof.net/uebersicht/)
 ### Lynx
 
 A simple text clock with weather information.
-
 ![](./repo_resources/lynx.png)
+
+### Sloth
+
+Typographic widget to show the current time, date and weather.
+![](./repo_resources/sloth.png)

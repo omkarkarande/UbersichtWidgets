@@ -1,15 +1,15 @@
 /* eslint-disable react/react-in-jsx-scope */
 
 // Imports 
-import { css, React } from 'uebersicht';
+import { css } from 'uebersicht';
 import { fetchCurrentDate, fetchCurrentTime } from './src/datetimeutils';
 import { fetchCurrentWeather } from './src/weatherutils';
 
 // 3P requires
-var numberConverter = require("number-to-words");
+const numberConverter = require("number-to-words");
 
 // User Config
-var userConfig = require("./user_config.json");
+const userConfig = require("./user_config.json");
 
 // Emotion styles
 const container = css`
@@ -78,7 +78,7 @@ export const command = () => {
     return {
         "time": fetchCurrentTime(),
         "date": fetchCurrentDate(),
-        "weather": fetchCurrentWeather(userConfig["location"], userConfig["OPENWEATHERMAP_API_KEY"])
+        "weather": fetchCurrentWeather(userConfig["location"], userConfig["openweathermapApiKey"])
     };
 };
 
@@ -105,7 +105,7 @@ export const render = ({output, error}) => {
 
             <div className={infoBox}>
                 <div className={weekday}>{date["weekday"]}</div>
-                <div>{date["dateString"]}</div>
+                <div>{date["month"]} {date["day"]}, {date["year"]}</div>
             </div>
     
             { weather === undefined ? 

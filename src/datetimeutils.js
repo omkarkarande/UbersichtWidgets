@@ -7,7 +7,7 @@ const fetchCurrentTime = () => {
     return {
         "hours": now.getHours() % 12 || 12,
         "minutes": now.getMinutes(),
-        "period": (now.getHours() < 12 || now.getHours()) === 24 ? "AM" : "PM"
+        "period": (now.getHours() < 12 || now.getHours() === 24) ? "AM" : "PM"
     };
 };
 
@@ -37,7 +37,7 @@ const fetchCurrentDate = () => {
 
 /**
  * Gets an appropriate greeting for the given hour.
- * @param {number} hours 
+ * @param {number} hours
  */
 const fetchGreeting = (hours) => {
     if (hours < 12) return "morning";

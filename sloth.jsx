@@ -27,7 +27,7 @@ const h1Light = css`
 `;
 
 const greeting = css`
-    padding: 120px 12px 0 5px;
+    padding: 180px 8px 0 8px;
     font-family: "Galyon";
     font-size: 18px;
     letter-spacing: 0.4em;
@@ -85,7 +85,7 @@ export const render = ({ output, error }) => {
     return (
         <div className={container}>
             <div className={greeting}>
-                good {fetchGreeting(time["hours"])}
+                good {fetchGreeting(time["hours"], time["period"])}
             </div>
 
             <div className={info}>
@@ -100,10 +100,10 @@ export const render = ({ output, error }) => {
                     {time["hours"]}.{time["minutes"]} {time["period"]}
                 </div>
 
-                { weather === undefined ? 
+                { weather === undefined ?
                     (
                         <div className={weatherBox}>Fetching Weather...</div>
-                    ) : 
+                    ) :
                     (
                         <div className={weatherBox}>
                             {`${weather["condition"]} outside, with a temprature of ${weather["temprature"]}°C. humidity is at ${weather["humidity"]}% and wind is blowing at ${weather["windSpeed"]} km/h`}

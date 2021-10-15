@@ -10,56 +10,57 @@ const userConfig = require("./user_config.json");
 
 // Emotion styles
 const container = css`
-    margin: 28vh 0 0 128px;
+    width: 28vw;
+    height: 42vh;
+    max-width: 640px;
+    margin: 28vh 0 0 8vw;
 `;
 
 const day = css`
-    position: absolute;
     font-family: "Din Condensed";
-    font-size: 420px;
-    opacity: 15%;
+    font-size: 48vh;
+    opacity: 12%;
     -webkit-mask-image: -webkit-gradient(linear, right top, right bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
 `;
 
 const month = css`
-    position: absolute;
     font-family: "Dank Mono Italic";
     font-weight: 500;
-    font-size: 72px;
+    font-size: 8vh;
     text-transform: lowercase;
-    margin: 140px 0 0 80px;
     color: #161616;
+    margin: -40vh 0 0 110px;
 `;
 
 const clock = css`
-    width: 100%;
-    position: absolute;
     color: #161616;
-    font-family: "Montserrat Medium";
-    font-size: 20px;
-    margin: 220px 0 0 84px;
+    width: 6.6vw;
+    min-width: 132px;
+    font-family: "Montserrat Bold";
+    font-size: 2vh;
     border-bottom: 2px solid #161616;
+    margin: 0 0 0 118px;
+`;
+
+const weatherContainer = css`
+    font-family: "Montserrat";
+    font-size: 1.3vh;
+    margin: 2vh 0 0 118px;
+    color: #161616
 `;
 
 const weekday = css`
-    position: absolute;
-    margin: 378px 0 0 -124px ;
     font-family: "Din Condensed";
-    font-size: 18px;
-    letter-spacing: 0.5em;
+    font-size: 1.6vh;
+    letter-spacing: 0.7em;
     writing-mode: vertical-lr;
     text-transform: uppercase;
     text-orientation: sideways;
     transform: rotate(180deg);
+    margin: -9.6vh 0 0 60px;
 `;
 
-const weatherContainer = css`
-    width: 250%;
-    position: absolute;
-    margin: 270px 0 0 84px;
-    font-family: "Montserrat";
-    font-size: 14px;
-`;
+
 
 // Value in milliseconds. Dictates how often the widget state is refreshed.
 export const refreshFrequency = 1000;
@@ -82,7 +83,7 @@ export const render = ({output, error}) => {
         <div className={container}>
             {/* Big day in the background */}
             <div className={day}>
-            {String(date["day"]).padStart(2, "0")}
+                {String(date["day"]).padStart(2, "0")}
             </div>
             {/* Month */}
             <div className={month}>
@@ -91,10 +92,6 @@ export const render = ({output, error}) => {
             {/* Current Time*/}
             <div className={clock}>
                 {String(time["hours"]).padStart(2, "0")}:{String(time["minutes"]).padStart(2, "0")} {time["period"]}
-            </div>
-            {/* Weekday String */}
-            <div className={weekday}>
-                {date["weekday"]}
             </div>
             {/* Weather */}
             { weather === undefined ?
@@ -105,6 +102,10 @@ export const render = ({output, error}) => {
                     Temprature is around <i>{weather["temprature"]}°C</i>, wind speed is <i>{weather["windSpeed"]}km/h</i>, and humidity about <i>{weather["humidity"]}%</i>
                 </div>)
             }
+            {/* Weekday String */}
+            <div className={weekday}>
+                {date["weekday"]}
+            </div>
         </div>
     );
 };

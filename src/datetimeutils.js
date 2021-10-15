@@ -20,12 +20,11 @@ const fetchCurrentDate = () => {
     const now =  new Date().toLocaleString('en-GB', {
       day: "2-digit",
       weekday: "long",
-      month: "short",
+      month: "long",
       year: "numeric",
     }).split(",").map((item) => item.trim());
 
     const [day, month, year] = now[1].split(" ");
-    console.log(day);
     // Parse string into separate entities
     return {
         "weekday": now[0],

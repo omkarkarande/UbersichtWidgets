@@ -63,7 +63,7 @@ const weekday = css`
 
 
 // Value in milliseconds. Dictates how often the widget state is refreshed.
-export const refreshFrequency = 1000;
+export const refreshFrequency = 20000;
 
 // Command to be executed at every {refreshInterval}.
 export const command = () => {

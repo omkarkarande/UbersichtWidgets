@@ -94,7 +94,7 @@ export const render = ({output, error}) => {
             </div>
             {/* Weekday String */}
             <div className={weekday}>
-                wednesday
+                {date["weekday"]}
             </div>
             {/* Weather */}
             { weather === undefined ?

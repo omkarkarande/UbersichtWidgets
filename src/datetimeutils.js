@@ -38,10 +38,12 @@ const fetchCurrentDate = () => {
  * Gets an appropriate greeting for the given hour.
  * @param {number} hours
  */
-const fetchGreeting = (hours) => {
-    if (hours < 12) return "morning";
-    if (hours < 18) return "afternoon";
-    return "evening";
+const fetchGreeting = (hours, period) => {
+    if (period === "PM") {
+        if (hours < 5) return "afternoon";
+        return "evening";
+    }
+    return "morning";
 };
 
 export { fetchCurrentTime, fetchCurrentDate, fetchGreeting };

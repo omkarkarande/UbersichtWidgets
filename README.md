@@ -15,7 +15,7 @@ Custom widgets for [Übersicht](https://tracesof.net/uebersicht/)
 ### Mandrake
 
 Big date with some more information.
-![](./repo_resources/mandrake.jpg)
+![](./repo_resources/mandrake.png)
 
 ### Lynx
 

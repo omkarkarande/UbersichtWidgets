@@ -14,6 +14,7 @@ const container = css`
     height: 42vh;
     max-width: 640px;
     margin: 28vh 0 0 8vw;
+    font-smooth: auto;
 `;
 
 const day = css`

@@ -11,6 +11,10 @@ Custom widgets for [Übersicht](https://tracesof.net/uebersicht/)
 5. Pick the widget you want to display, hide the others.
 
 ## Widgets
+### Summer
+
+Does it feel like summer yet?
+![](./repo_resources/summer.png)
 
 ### Mandrake
 

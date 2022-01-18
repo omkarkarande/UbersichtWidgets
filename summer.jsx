@@ -31,10 +31,11 @@ const overlayBox = css`
 
 const day = css`
     width: 100%;
+    padding-top: 5vh;
     position: absolute;
     color: #333;
-    font-family: "Reey Regular";
-    font-size: 36vh;
+    font-family: "Tahu!";
+    font-size: 50vh;
     text-align: center;
 `;
 

@@ -18,47 +18,47 @@ const container = css`
 `;
 
 const day = css`
-    font-family: "Din Condensed";
+    font-family: "Din Condensed Bold";
     font-size: 48vh;
-    opacity: 12%;
-    -webkit-mask-image: -webkit-gradient(linear, right top, right bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+    -webkit-mask-image: linear-gradient(0deg, transparent, transparent, rgba(0,0,0,0.4));
 `;
 
 const month = css`
-    font-family: "Dank Mono Italic";
+    font-family: "Caviar Dreams Bold Italic";
     font-weight: 500;
     font-size: 8vh;
     text-transform: lowercase;
     color: #161616;
-    margin: -40vh 0 0 110px;
+    margin: -40vh 0 0 100px;
 `;
 
 const clock = css`
     color: #161616;
     width: 6.6vw;
     min-width: 132px;
-    font-family: "Montserrat Bold";
-    font-size: 2vh;
+    font-family: "Bebas";
+    font-size: 2.5vh;
     border-bottom: 2px solid #161616;
-    margin: 0 0 0 118px;
+    margin: 0 0 0 108px;
 `;
 
 const weatherContainer = css`
-    font-family: "Montserrat";
+    font-family: "SF Pro";
     font-size: 1.3vh;
-    margin: 2vh 0 0 118px;
+    margin: 2vh 0 0 108px;
     color: #161616
 `;
 
 const weekday = css`
-    font-family: "Din Condensed";
+    font-family: "Antonio Bold";
     font-size: 1.6vh;
     letter-spacing: 0.7em;
     writing-mode: vertical-lr;
     text-transform: uppercase;
     text-orientation: sideways;
     transform: rotate(180deg);
-    margin: -9.6vh 0 0 60px;
+    text-align: right;
+    margin: -9.6vh 0 0 52px;
 `;
 
 
@@ -98,7 +98,7 @@ export const render = ({output, error}) => {
             { weather === undefined ?
                 (<div className={weatherContainer}>Fetching weather...</div>) :
                 (<div className={weatherContainer}>
-                    Current weather in <i>{weather["location"]}</i> is <i>{weather["condition"]}</i>.
+                    Current weather in <b>{weather["location"]}</b> is {weather["condition"]}.
                     <br></br><br></br>
                     Temprature is around <i>{weather["temprature"]}°C</i>, wind speed is <i>{weather["windSpeed"]}km/h</i>, and humidity about <i>{weather["humidity"]}%</i>
                 </div>)

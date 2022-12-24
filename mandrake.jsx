@@ -20,7 +20,7 @@ const container = css`
 const day = css`
     font-family: "Din Condensed Bold";
     font-size: 48vh;
-    -webkit-mask-image: linear-gradient(0deg, transparent, transparent, rgba(0,0,0,0.4));
+    -webkit-mask-image: linear-gradient(0deg, transparent, transparent, rgba(0,0,0,0.05), rgba(0,0,0,0.32));
 `;
 
 const month = css`

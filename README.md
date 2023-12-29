@@ -11,6 +11,12 @@ Custom widgets for [Übersicht](https://tracesof.net/uebersicht/)
 5. Pick the widget you want to display, hide the others.
 
 ## Widgets
+
+### Aristaeus
+
+Simplicity
+![](./repo_resources/aristaeus.png)
+
 ### Summer
 
 Does it feel like summer yet?

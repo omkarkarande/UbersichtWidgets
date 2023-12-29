@@ -45,12 +45,12 @@ const infobox = css`
 `;
 
 const weekday = css`
-    margin-left: -24px;
-    margin-top: -80px;
-    padding-top: 50px;
+    margin-left: -2vh;
+    margin-top: -96px;
+    padding-top: 6vh;
     color: #ccc;
     font-family: "Abel Regular";
-    font-size: 16px;
+    font-size: 1.4vh;
     letter-spacing: 0.2em;
     writing-mode: vertical-lr;
     text-align: left;
@@ -66,13 +66,13 @@ const weekday = css`
 const month = css`
     color: #242424;
     font-family: "Abel Regular";
-    font-size: 36px;
+    font-size: 3.6vh;
     letter-spacing: 0.1em;
     writing-mode: vertical-rl;
     text-transform: lowercase;
     text-orientation: sideways;
-    padding-top: 56px;
-    margin-left: -5px;
+    padding-top: 8vh;
+    margin-left: -0.6vh;
 `;
 
 const inlineContainer = css`
@@ -82,17 +82,17 @@ const inlineContainer = css`
 
 const leftOfSeparator = css`
     color: #ccc;
-    font-size: 16px;
+    font-size: 1.2vh;
     font-family: "Abel Regular";
-    margin-left: -22px;
+    margin-left: -1.8vh;
 `;
 
 const rightOfSeparator = css`
     color: #242424;
-    font-size: 12px;
+    font-size: 0.9vh;
     text-transform: uppercase;
     font-family: "Abel Regular";
-    padding-left: 10px;
+    padding-left: 0.9vh;
 `;
 
 // Value in milliseconds. Dictates how often the widget state is refreshed.

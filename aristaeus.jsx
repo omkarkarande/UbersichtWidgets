@@ -21,7 +21,7 @@ const container = css`
 `;
 
 const hello = css`
-    color: #888;
+    color: #666;
     font-family: 'Bebas Regular';
     font-size: 3.6vh;
 `;
@@ -47,7 +47,7 @@ const infobox = css`
 const weekday = css`
     margin-left: -2vh;
     margin-top: -96px;
-    padding-top: 6vh;
+    padding-top: 10vh;
     color: #ccc;
     font-family: "Abel Regular";
     font-size: 1.4vh;
@@ -64,7 +64,7 @@ const weekday = css`
 `;
 
 const month = css`
-    color: #242424;
+    color: #333;
     font-family: "Abel Regular";
     font-size: 3.6vh;
     letter-spacing: 0.1em;
@@ -88,11 +88,11 @@ const leftOfSeparator = css`
 `;
 
 const rightOfSeparator = css`
-    color: #242424;
+    color: #444;
     font-size: 0.9vh;
     text-transform: uppercase;
     font-family: "Abel Regular";
-    padding-left: 0.9vh;
+    margin-left: 1vh;
 `;
 
 // Value in milliseconds. Dictates how often the widget state is refreshed.
@@ -133,7 +133,7 @@ export const render = ({output, error}) => {
                 {weather === undefined ?
                     (<div className={rightOfSeparator}>Fetching...</div>) :
                     (<div className={inlineContainer}>
-                        <span className={leftOfSeparator}>{weather["temprature"]}</span>
+                        <span className={leftOfSeparator}>{String(weather["temprature"]).padStart(2, "0")}</span>
                         <span className={rightOfSeparator}>{weather["condition"]}</span>
                     </div>)
                 }

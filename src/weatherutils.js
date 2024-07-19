@@ -10,7 +10,7 @@ const CACHE_TTL = 3600000; //milliseconds. 1 hour.
  * @param {string} location
  * @param {string} apiKey
  */
-const fetchCurrentWeather = (location, apiKey) => {
+export function fetchCurrentWeather(location, apiKey) {
     // Update cached weather if it has expired
     if (cache.get("weather") === undefined) {
         // API call to update weather here.
@@ -33,5 +33,3 @@ const fetchCurrentWeather = (location, apiKey) => {
 
     return cache.get("weather");
 };
-
-export { fetchCurrentWeather };
